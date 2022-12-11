@@ -1,13 +1,66 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap');
+
+/* base styles */
+* {
+    margin: 10px;
+    font-family: "Comic Neue";
+    color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.rivDiv {
+    max-width: 600px;
+    max-height: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.next {
+    color: white;
+    border: thin black;
+    border-radius: 7px;
+    height: 50px;
+    max-width: 600px;
+    min-width: 300px;
+    margin: 20px auto;
+    background: black;
+}
+
+.h1Tod {
+    color: black;
+    text-underline: black;
+    padding: 30px;
+    text-align: center;
+    /*font-family: "Comic Neue";*/
+}
+
+.player-preview {
+    padding: 20px 30px;
+    margin: 20px 0;
+    border-bottom: 2px solid mintcream;
+}
+
+.player-preview:hover {
+    box-shadow: 1px 3px 5px darkorange;
+}
+
+.player-preview h2 {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 8px;
+}
+
+.player-preview h3 {
+    font-size: 30px;
+    color: chartreuse;
+    margin-bottom: 8px;
+}
+
+.content {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+

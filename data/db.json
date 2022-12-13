@@ -1,0 +1,19 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Balo",
+      "nickname": "thewick3rman"
+    },
+    {
+      "id": 2,
+      "name": "Ajey",
+      "nickname": "Nani_dafaq"
+    },
+    {
+      "id": 3,
+      "name": "Wangatia",
+      "nickname": "Ace"
+    }
+  ]
+}

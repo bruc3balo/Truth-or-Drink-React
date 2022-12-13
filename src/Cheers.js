@@ -1,5 +1,7 @@
 import { useRive } from '@rive-app/react-canvas';
 import todRive from './tod.riv';
+import React  from 'react';
+
 
 const Cheers = () => {
     const { rive, RiveComponent } = useRive({

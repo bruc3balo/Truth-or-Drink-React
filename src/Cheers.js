@@ -1,5 +1,5 @@
 import { useRive } from '@rive-app/react-canvas';
-import todRive from './tod.riv';
+import todRive from './static/tod.riv';
 import React  from 'react';
 
 

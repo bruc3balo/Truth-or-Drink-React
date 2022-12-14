@@ -1,42 +1,34 @@
-import Cheers from "./Cheers";
-import React, {useState, useEffect} from "react";
-import PlayerList from "./PlayerList";
-import useFetch from "./useFetch";
-
+import React from "react";
+import Splashscreen from "./pages/splashscreen/Splashscreen";
+import {Route, Routes} from 'react-router-dom';
+import WelcomePage from "./pages/welcome/Welcome";
+import Lost404Page from "./pages/errors/404";
+import {GameRoutes} from "./pages/game/GameRoutes";
+import FeedbackPage from "./pages/feedback/Feedback";
+import ProfilePage from "./pages/profile/Profile";
+import NoServicePage from "./pages/errors/NoService";
+import {StatisticsRoutes} from "./pages/stats/StatisticsRoutes";
+import {LoginRoutes} from "./pages/login/LoginRoutes";
 
 function App() {
 
-    const [page, setPage] = useState('splashscreen')
-    const goToWelcomePage = (event) => {
-        setPage("Welcome");
-        console.log("Welcome mlevi", event)
-    }
-
-
-    // const tod = {title: "Truth OR Drink", link : "https://truthordrink-44d9a.web.app/"}
-
-    const {data: players , isLoading, error} = useFetch({url: 'http://localhost:4000/players'},)
-
     return (
-      <div className="App" style={{ alignContent: "center", margin: "60px auto", padding: "40px", justifyContent: "center", alignItems: "center"}}>
-          <h1>{page}</h1>
-          <header className="App-header">
-          <Cheers/>
-        </header>
-          <div className="rivDiv">
-             <button className="next" onClick={(event) => goToWelcomePage(event)}>Next</button>
-         </div>
-          <div className="rivDiv">
-              {error && <div style={{color: "red"}}> {error} </div>}
-              {isLoading && <div> Loading... </div>}
-              {players && <PlayerList players={players.filter((p) => p.id)}/>}
-          </div>
-      </div>
+        <>
+            <Routes>
+                <Route path="/" element={<Splashscreen/>}/>
+                <Route path="/welcome" element={<WelcomePage/>}/>
+                <Route path="/login/*" element={<LoginRoutes/>}/>
+                <Route path="/game/*" element={<GameRoutes/>}/>
+                <Route path="/profile" element={<ProfilePage/>}/>
+                <Route path="/feedback" element={<FeedbackPage/>}/>
+                <Route path="/stats/*" element={<StatisticsRoutes/>}/>
+                <Route path="/503" element={<NoServicePage/>}/>
+                <Route path="*" element={<Lost404Page/>}/>
+            </Routes>
+        </>
     );
 
 }
-
-
 
 
 export default App;

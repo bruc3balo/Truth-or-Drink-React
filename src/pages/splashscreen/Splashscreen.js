@@ -1,20 +1,21 @@
 import Cheers from "../../Cheers";
-import { useNavigate } from "react-router-dom";
+import {Navigate, useNavigate} from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
+import {apiUrl} from "../../constants/constants";
 
-function GoToWelcomePage () {
-    const nav = useNavigate()
-     nav("/welcome", {replace: true, state: {}})
-}
 
-const Splash = () => {
+const SplashScreenPage = () => {
+
+    const {data: apiResponse, error, isPending} = useFetch({url: `${apiUrl}/splashscreen`, method: "POST"})
+
     return (
         <div>
             <Cheers/>
-            <div>Loading...</div>
-            <button onClick={GoToWelcomePage}>Welcome</button>
-            {/*<Link to="/login/signin" replace><button>Login</button></Link>*/}
+            {isPending && <div>Loading...</div>}
+            {apiResponse && apiResponse.statusCode === 200 && <Navigate to="/welcome" replace={true}/>}
+            {error && <Navigate to="/503" replace={true}/>}
         </div>
     );
 }
 
-export default Splash;
+export default SplashScreenPage;

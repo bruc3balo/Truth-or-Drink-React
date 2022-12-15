@@ -1,5 +1,4 @@
 import React from "react";
-import Splashscreen from "./pages/splashscreen/Splashscreen";
 import {Route, Routes} from 'react-router-dom';
 import WelcomePage from "./pages/welcome/Welcome";
 import Lost404Page from "./pages/errors/404";
@@ -9,13 +8,14 @@ import ProfilePage from "./pages/profile/Profile";
 import NoServicePage from "./pages/errors/NoService";
 import {StatisticsRoutes} from "./pages/stats/StatisticsRoutes";
 import {LoginRoutes} from "./pages/login/LoginRoutes";
+import SplashScreenPage from "./pages/splashscreen/Splashscreen";
 
 function App() {
 
     return (
         <>
             <Routes>
-                <Route path="/" element={<Splashscreen/>}/>
+                <Route path="/" element={<SplashScreenPage/>}/>
                 <Route path="/welcome" element={<WelcomePage/>}/>
                 <Route path="/login/*" element={<LoginRoutes/>}/>
                 <Route path="/game/*" element={<GameRoutes/>}/>

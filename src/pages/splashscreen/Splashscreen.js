@@ -1,5 +1,5 @@
-import Cheers from "../../Cheers";
-import {Navigate, useNavigate} from "react-router-dom";
+import Cheers from "../../segments/Cheers";
+import {Navigate} from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 import {apiUrl} from "../../constants/constants";
 

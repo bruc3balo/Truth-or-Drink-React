@@ -3,18 +3,104 @@
 /* base styles */
 * {
     margin: 10px;
-    font-family: "Comic Neue";
+    font-family: "Comic Neue", monospace;
     color: black;
 }
 
-.rivDiv {
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field-title {
+    text-align: start;
+    font-size: large;
+    margin-top: 20px;
+    font-family: "Comic Sans MS", monospace;
+}
+
+.field {
+    text-align: start;
+    font-size: medium;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    border: 1px #282c34;
+    border-radius: 10px;
+    margin: 20px;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+.instructions {
+    display: grid;
+    place-items: center;
+}
+
+.ul {
+    text-align: center;
+    font-family: "Comic Sans MS", monospace;
+}
+
+.rounded_button {
+    border: #282c34;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px 0 black;
+    color: black;
+    padding: 15px;
+    margin: 20px auto;
+    width: 200px;
+}
+
+.rounded_button:hover {
+    box-shadow: 0 4px 8px 0 darkgray;
+}
+
+.card{
+    width: 50%;
+    display: inline-block;
+    box-shadow: 2px 2px 20px wheat;
+    border-radius: 5px;
+    margin: 2%;
+    transition: 0.3s;
+    padding: 2px 16px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.center-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.neon-light {
+    text-align: center;
+    animation: neon 3s ease-in-out infinite;
+    font-family: "Comic Sans MS", monospace;
+    font-size: xxx-large;
+}
+
+.text-title {
+    text-align: center;
+    font-size: x-large;
+    font-family: "Comic Sans MS", monospace;
+}
+
+@keyframes neon {
+    from { color: cyan }
+    50%  { color: red }
+    to { color: orange }
+}
+
+.splash {
     max-width: 600px;
     max-height: 600px;
     margin: 60px auto;
     padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .next {

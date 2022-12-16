@@ -1,4 +1,3 @@
-import {isNullOrUndefined} from "../constants/constants";
 
 export class ApiResponse {
 
@@ -14,9 +13,9 @@ export class ApiResponse {
 
 
     static from(response) {
-        if(isNullOrUndefined(response.data) || !Object.keys(response.data).length) return new ApiResponse(response.status, response.statusText, null)
+        if(!(response.data) || !Object.keys(response.data).length) return new ApiResponse(response.status, response.statusText, null)
         let obj = JSON.parse(response.json())
-        return new ApiResponse(isNullOrUndefined(obj.api_http_code) ?? response.status,isNullOrUndefined(obj.api_description) ?? "", obj.data);
+        return new ApiResponse(obj.api_http_code ?? response.status,obj.api_description ?? "", obj.data);
     }
 }
 

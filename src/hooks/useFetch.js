@@ -9,20 +9,19 @@ const useFetch = ({url, extraHeaders, method}) => {
     const [isLoading, setLoading] = useState(true);
     const [error, setError] = useState(null)
 
-    const abortController = new AbortController();
+    // const abortController = new AbortController();
     
 
     useEffect(() => {
-        setTimeout(() => {
             console.log("Sending "+ url)
             fetch(url, {
-                signal: abortController.signal,
+                // signal: abortController.signal,
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
+                    'Content-Type': 'application/json',
+                } ,
                 method: method
-                
+
             })
                 .then(response => ApiResponse.from(response))
                 .then(json => {
@@ -32,13 +31,12 @@ const useFetch = ({url, extraHeaders, method}) => {
                     setLoading(false)
                     setError(null)
                     // console.log(json)
-                }).catch((error) => {
+                })
+                .catch((error) => {
                 if(error.name === 'AbortError') return;
                 setLoading(false)
                 setError(error.message)
             })
-        }, 1000);
-        
         // return () => abortController.abort();
     }, [url]);
     //url as dependency to rerun when url changes

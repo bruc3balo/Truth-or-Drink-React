@@ -1,10 +1,40 @@
+import Cheers from "../../segments/Cheers";
+import {useState} from "react";
+import { useNavigate } from 'react-router-dom';
+
+
 const WelcomePage = () => {
+
+    const rules = ["#Grab your drinks","#Grab your friends","#Bring your questions"]
+    const instructions = ["1. Pick a category","2. Ask your burning question","3. Set maximum number of times allowed to drink", "4. Have fun"]
+
+    const [page, setPage] = useState(0);
+    const [data, setData] = useState(rules);
+    const navigate = useNavigate();
+
     return (
-        <div className="rivDiv">
-            <div style={{borderRadius: 20, padding: 20}}>
-                <img style={{width: 100, height: 100}} src={"https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Elden_Ring_Box_art.jpg/220px-Elden_Ring_Box_art.jpg"}/>
-                <h1>Title</h1>
-                <p style={{margin: 20 }}>Description</p>
+        <div>
+            <Cheers width={300} height={300} loop={true}/>
+            <h1 className="neon-light">#Welcome</h1>
+            <h3 className="neon-light">#TOD</h3>
+            <div className="instructions">
+                <h3 className="text-title"><u style={{margin: 40}}>{page === 0 ? "The rules are simple:" : "Instructions"}</u></h3>
+                {data.map((m) => (
+                    <ul className="ul">{m}</ul>
+                ))}
+                <button className="rounded_button" onClick={() => {
+                    switch (page) {
+                        default:
+                        case 0:
+                        setPage(1)
+                        setData(instructions)
+                        break;
+
+                        case 1:
+                        navigate("/login/signin")
+                        break;
+                    }
+                }}>Next</button>
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ export function GameRoutes() {
     return (
         <Routes>
             <Route index element={<GamePage/>}/>
-            <Route path="session" element={<Navigate to="/game"/>}/>}/>
+            <Route path="session" element={<Navigate to="/game" replace={true}/>}/>}/>
             <Route path="session/:id" element={<GameSessionPage/>}/>
         </Routes>
     );

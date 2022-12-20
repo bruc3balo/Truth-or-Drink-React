@@ -7,7 +7,7 @@ import React from "react";
 export function LoginRoutes() {
     return (
         <Routes>
-            <Route index element={<Navigate to="/login/signin"/>}/>
+            <Route index element={<Navigate to="/login/signin" replace={true}/>}/>
             <Route path="signin" element={<SignIn/>}></Route>
             <Route path="signup" element={<SignUp/>}></Route>
         </Routes>

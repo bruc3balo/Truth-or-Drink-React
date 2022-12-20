@@ -32,6 +32,11 @@
     font-family: "Comic Sans MS", sans-serif;
 }
 
+.error {
+    text-align: center;
+    color: red;
+}
+
 .instructions {
     display: grid;
     place-items: center;
@@ -77,12 +82,31 @@
     margin-right: auto;
 }
 
+.appbar-trailing {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+}
+
+.appbar-username {
+    font-family: "Comic Sans MS", monospace;
+    text-align: center;
+    border: thin black;
+    border-radius: 30px;
+    padding: 5px;
+    box-shadow: 0 4px 20px 0 black;
+    /*line-height: 30px;*/
+}
+
 .neon-light {
     text-align: center;
     animation: neon 3s ease-in-out infinite;
     font-family: "Comic Sans MS", monospace;
     font-size: xxx-large;
 }
+
+
 
 .text-title {
     text-align: center;

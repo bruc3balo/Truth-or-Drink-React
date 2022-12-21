@@ -12,7 +12,7 @@ const GamePage = () => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
-    function goToProfile( ) {
+    function goToProfile () {
         navigate("/profile")
     }
     function host () {
@@ -37,10 +37,11 @@ const GamePage = () => {
                 extraHeaders: {'Authorization': "Bearer " +token}
             }).then(({data: apiResponse, error}) => {
                 let myUser = MyUser.fromApiResponse(apiResponse);
-                console.log(myUser)
                 setUser(myUser)
+                setOperation({method: "post", collection: "user", data: myUser}).then(() => {
+                    console.log(myUser)
+                })
             })
-
         })
 
     }
@@ -54,7 +55,7 @@ const GamePage = () => {
 
             <div>
                 <div className="appbar-trailing" onClick={goToProfile}>
-                    <img style={{marginRight: 75}} width={30} height={30} src={userIcon}/>
+                    <img style={{marginRight: 75}} width={30} height={30} src={userIcon} alt="user icon"/>
                     {user && <h1 className="appbar-username">{user.username}</h1>}
                 </div>
             </div>
@@ -62,12 +63,12 @@ const GamePage = () => {
             <Cheers/>
             <div style={{margin: 20}}/>
 
-            <div className="parent">
+            <div className="center-column">
                 <button className="rounded_button" onClick={host}>HOST</button>
             </div>
 
 
-            <div className="parent">
+            <div className="center-column">
                 <button className="rounded_button" onClick={join}>JOIN</button>
             </div>
 

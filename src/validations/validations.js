@@ -28,7 +28,8 @@ export function gamerTagHasError(gamerTag) {
     if(!gamerTag) return "Gamer tag required";
     return null;
 }
-export function emailHasError(email) {
+export function emailHasError(email, {skip}) {
+    if(skip && !email) return null
     if(!email) return "Email cannot be empty"
     if(!email.includes("@")) return "Invalid email"
     if(!hasAlphabetCharacters(email)) return "Must container alphabetical characters"

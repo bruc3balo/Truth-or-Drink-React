@@ -82,7 +82,7 @@ const SignInPage = () => {
 
                 <div style={{margin: 50}}/>
 
-                <div className="parent">
+                <div className="center-column">
                     <button className="rounded_button" onClick={signIn}>Sign in
                     </button>
                 </div>

@@ -44,7 +44,7 @@ const SignUpPage = () => {
     }
     function validateEmail() {
         email.current = emailFieldRef.current.value
-        setEmailError(emailHasError(email.current))
+        setEmailError(emailHasError(email.current, {skip: true}))
     }
     async function signUp() {
         if (!usernameError && !passwordError && !gamerTagError && !emailError) {
@@ -113,7 +113,7 @@ const SignUpPage = () => {
 
                 <div style={{margin: 50}}/>
 
-                <div className="parent"><button className="rounded_button" onClick={signUp}>Sign up</button></div>
+                <div className="center-column"><button className="rounded_button" onClick={signUp}>Sign up</button></div>
 
                 <div style={{margin: 20}}/>
 

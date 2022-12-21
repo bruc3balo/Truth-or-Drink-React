@@ -34,6 +34,7 @@ export class ApiResponse {
 
 export class MyUser {
     username
+
     gamerTag
 
     emotion
@@ -58,6 +59,25 @@ export class MyUser {
         if(apiResponse.statusCode !== 200) return null
         let json = apiResponse.data
         return new MyUser(json.username, json.gamer_tag, json.emotion, json.email,json.verified, json.created_at)
+    }
+}
+
+export class Emotion {
+    id
+
+    description
+
+    status;
+
+
+    constructor(id, description, status) {
+        this.id = id;
+        this.description = description;
+        this.status = status;
+    }
+
+    static listFromApiResponse (apiResponse) {
+        return apiResponse.data.map(e => new Emotion(e.id, e.description, e.status));
     }
 }
 

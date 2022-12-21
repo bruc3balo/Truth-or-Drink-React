@@ -35,7 +35,7 @@ const SplashScreenPage = () => {
 
     return (
         <div>
-            <Cheers/>
+            <Cheers loop={true}/>
             {(splashState === loading || isDBLoading) && <div>Loading...</div>}
             {getError() && <div className="error"> {getError()} </div>}
             {(splashState === success && hasLoggedIn === failed) && <Navigate to="/welcome" replace={true}/>}

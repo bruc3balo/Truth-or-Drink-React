@@ -1,11 +1,14 @@
 import { useRive } from '@rive-app/react-canvas';
-import React from 'react';
-import {todRiv} from "../static/static";
+import {getRiveFromEmotion} from '../static/static';
+import React, {useState} from 'react';
 
 
-const Cheers = ({width, height, loop = false}) => {
+const ProfileRiv = ({width, height, loop = false, emotion}) => {
+
+
+
     const { rive, RiveComponent } = useRive({
-        src: todRiv(),
+        src: getRiveFromEmotion(emotion),
         autoplay: true,
     });
 
@@ -22,5 +25,4 @@ const Cheers = ({width, height, loop = false}) => {
     );
 }
 
-export default Cheers;
-
+export default ProfileRiv;

@@ -7,10 +7,52 @@
     color: black;
 }
 
-.parent {
+.center-column {
+    display: grid;
+    place-items: center;
+}
+
+.center-column-compact {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+}
+
+.emotion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.emotion-grid-item {
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+}
+
+.emotion-grid-item:hover {
+    box-shadow: 0 4px 8px 0 darkgray;
+    margin: 10px;
+}
+
+.center-row {
     display: flex;
+    align-content: center;
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+}
+
+.inner-parent {
+    display: grid;
+    place-items: start;
 }
 
 .field-title {

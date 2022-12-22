@@ -50,6 +50,23 @@
     flex-direction: row;
 }
 
+.center-c {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: start;
+    justify-self: center;
+    flex-direction: column;
+}
+
+.checkbox {
+    display: flex;
+    align-content: start;
+    justify-content: start;
+    align-items: start;
+    flex-direction: row;
+}
+
 .inner-parent {
     display: grid;
     place-items: start;

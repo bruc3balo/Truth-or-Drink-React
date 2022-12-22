@@ -36,6 +36,11 @@ export function emailHasError(email, {skip}) {
     if(email.length < 5) return "Email is too short"
     return null
 }
+export function maxNoOfDrinksHasError(drinks) {
+    if(!drinks || isNumber(drinks)) return "Enter a number"
+    if(drinks < 1) return "Enter a number more than 0 or uncheck limitations"
+    return null
+}
 
 function isOfLength({string, min, max}) {
     let l = string.length
@@ -65,6 +70,10 @@ function hasAlphabetCharacters(string) {
 function hasDigit (string) {
     let regExp = /\d/
     return regExp.test(string)
+}
+
+function isNumber(string) {
+    return /^[0-9]$/.test(string);
 }
 
 

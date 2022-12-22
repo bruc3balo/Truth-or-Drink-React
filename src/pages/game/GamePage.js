@@ -16,11 +16,11 @@ const GamePage = () => {
         navigate("/profile")
     }
     function host () {
-
+        navigate("/game/host")
     }
 
     function join () {
-
+        navigate("/game/join")
     }
 
     function getUser() {

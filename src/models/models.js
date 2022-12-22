@@ -81,3 +81,22 @@ export class Emotion {
     }
 }
 
+export class QuestionCategory {
+    id
+
+    description
+
+    status;
+
+
+    constructor(id, description, status) {
+        this.id = id;
+        this.description = description;
+        this.status = status;
+    }
+
+    static listFromApiResponse (apiResponse) {
+        return apiResponse.data.map(e => new Emotion(e.id, e.description, e.status));
+    }
+}
+
